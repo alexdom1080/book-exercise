@@ -60,6 +60,14 @@ class Book
         System.out.println(title);
     }
     
+    /**
+     * Prints out the details of the book.
+     */
+    public void printDetails() {
+        System.out.println("Author: " + author);
+        System.out.println("Title: " + title);
+        System.out.println("Pages: " + page);
+    }
  }
     
 
