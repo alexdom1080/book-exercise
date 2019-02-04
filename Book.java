@@ -80,9 +80,15 @@ class Book
      * Prints out the details of the book.
      */
     public void printDetails() {
+        int length = refNumber.length();
         System.out.println("Author: " + author);
         System.out.println("Title: " + title);
         System.out.println("Pages: " + page);
+        if (length == 0) {
+            System.out.println("ZZZ");
+        }else {
+            System.out.println("Reference Number: " + refNumber);
+        }
     }
     
     
