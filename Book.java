@@ -14,17 +14,19 @@ class Book
     private int page;
     private String refNumber;
     private int borrowed;
+    private boolean courseText;
 
     /**
-     * Set the author and title fields when this object
+     * Set the book fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean textRequired)
     {
         author = bookAuthor;
         title = bookTitle;
         page = bookPages;
         refNumber = "";
+        courseText = textRequired;
     }
 
     // Add the methods here ...
@@ -45,14 +47,14 @@ class Book
     /**
      * Keeps track of the number of times a book has been borrowed.
      */
-    public void trackBorrow() {
+    public void borrow() {
         borrowed += 1;
     }
         
     /**
      * Provides access to the string holding the reference number.
      */
-    public  String getRef() {
+    public  String getRefNumber() {
         return refNumber;
     }
     
@@ -80,7 +82,7 @@ class Book
     /**
      * Provides access to the string holding the book's page number.
      */
-    public int getPage() {
+    public int getPages() {
         return page;
     }
     
@@ -99,6 +101,13 @@ class Book
     }
     
     /**
+     * Prints out the answer to if the book is required for a class.
+     */
+    public boolean isCourseText() {
+        return courseText;
+    }
+    
+    /**
      * Prints out the details of the book.
      */
     public void printDetails() {
@@ -112,7 +121,6 @@ class Book
             System.out.println("Reference Number: " + refNumber);
         }
         System.out.println("Number of times the book has been checked out: " + borrowed);
-        
     }
     
     
