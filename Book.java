@@ -13,6 +13,7 @@ class Book
     private String title;
     private int page;
     private String refNumber;
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
@@ -42,10 +43,24 @@ class Book
     }
     
     /**
+     * Keeps track of the number of times a book has been borrowed.
+     */
+    public void trackBorrow() {
+        borrowed += 1;
+    }
+        
+    /**
      * Provides access to the string holding the reference number.
      */
     public  String getRef() {
         return refNumber;
+    }
+    
+    /**
+     * Returns the number of times a book has been borrowed.
+     */
+    public int getBorrowed() {
+        return borrowed;
     }
     
     /**
@@ -96,6 +111,8 @@ class Book
         }else {
             System.out.println("Reference Number: " + refNumber);
         }
+        System.out.println("Number of times the book has been checked out: " + borrowed);
+        
     }
     
     
